@@ -5,8 +5,13 @@ module vector(
   output a_logical_or_b,
   output a_reduction_or,
   output b_reduction_or,
-  output [7:0] not_a_not_b);
-  // Implemente as operações para cada uma das saídas usando o modelo
-  // assign a_bitwise_or_b = ... ;
+  output [7:0] not_a_not_b
+);
+
+  assign a_bitwise_or_b = a | b;
+  assign a_logical_or_b = a || b;
+  assign a_reduction_or = |a;
+  assign b_reduction_or = |b;
+  assign not_a_not_b = {~a, ~b};
 
 endmodule
